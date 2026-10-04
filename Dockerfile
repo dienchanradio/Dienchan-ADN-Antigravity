@@ -18,8 +18,8 @@ COPY lib/api-zod/package.json ./lib/api-zod/
 COPY lib/api-spec/package.json ./lib/api-spec/
 COPY scripts/package.json ./scripts/
 
-# Install all dependencies using pnpm (supports catalog: protocol)
-RUN pnpm install --frozen-lockfile
+# Install all dependencies using pnpm
+RUN pnpm install
 
 # Copy the rest of the source code
 COPY . .
