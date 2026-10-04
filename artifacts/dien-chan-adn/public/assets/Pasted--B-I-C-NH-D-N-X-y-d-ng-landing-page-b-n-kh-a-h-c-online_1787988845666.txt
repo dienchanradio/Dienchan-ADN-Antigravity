@@ -1,0 +1,338 @@
+## BỐI CẢNH DỰ ÁN
+
+Xây dựng landing page bán khóa học online "Diện Chẩn Kích Hoạt ADN Tự Chữa Lành" của giảng viên Nguyễn Minh Đạt. Trang gồm 10 section theo đúng thứ tự bên dưới, mỗi section có nội dung cố định (không được thay đổi) và ghi chú thiết kế riêng.
+
+---
+
+## 🟨 YÊU CẦU KỸ THUẬT CHUNG CHO TOÀN TRANG
+
+- Responsive đúng chuẩn trên Desktop, Tablet, Mobile — không vỡ layout ở bất kỳ kích thước nào.
+- Toàn bộ text bằng tiếng Việt, giữ đúng dấu.
+- Không để xảy ra lỗi "chữ mồ côi" (1 từ lẻ rớt xuống dòng cuối của đoạn/heading).
+- Không bao giờ để màu chữ trùng hoặc gần trùng với màu nền (kiểm tra độ tương phản, đặc biệt các khối dùng màu accent — xem bảng màu bên dưới).
+- Giữ đúng thứ tự và ranh giới 10 section như được chia trong prompt này — không gộp, không tách thêm.
+- Logo đặt góc trên bên trái của thanh điều hướng (dùng file ảnh "Logo Web" do người dùng cung cấp).
+
+### Bảng phân vai màu sắc (áp dụng xuyên suốt toàn trang)
+
+| Mã màu | Vai trò | Lưu ý |
+|---|---|---|
+| `#012C4E` (navy) | Màu nền chủ đạo của toàn trang | Giữ nhất quán, không đổi tông nền giữa các section |
+| `#FDFBF7` (trắng kem) | Màu chữ chính trên nền tối | Dùng cho nội dung cần đọc kỹ |
+| `#EDE6D6` (kem) | Màu chữ phụ / mô tả | Dùng cho caption, ghi chú nhỏ |
+| `#EAD292` (vàng nhạt) | Heading, điểm nhấn, mác "premium" | Chỉ dùng cho tiêu đề và điểm nhấn, không lạm dụng cho toàn bộ văn bản |
+| `#CF5C78` (hồng) | **Duy nhất** cho nút CTA (mua/đăng ký) | Không dùng màu này cho mục đích trang trí khác |
+| `#713520` (nâu) | Accent phụ | ⚠ Tương phản thấp trên nền navy `#012C4E` — chỉ dùng trên khối nền sáng như `#FDFBF7`/`#EDE6D6` |
+
+### Nguyên tắc nút kêu gọi hành động (CTA)
+
+- Toàn bộ nút "ĐĂNG KÝ HỌC NGAY" dùng chung màu `#CF5C78`, không đổi màu theo section.
+- Text nút luôn là hành động rõ ràng, không dùng cụm mơ hồ như "Xem thêm".
+- Khi bấm bất kỳ nút "ĐĂNG KÝ HỌC NGAY" nào trên trang (Hero, sau Bonus, sau Bảng giá, cuối trang...) đều điều hướng đến khu vực/section thanh toán có mã QR + form "Đăng Ký Tài Khoản" (chính là Section 8).
+- Có 1 nút CTA dạng sticky/floating hiển thị cố định khi cuộn trang (desktop và mobile), dẫn đến Section 8.
+- Khi người dùng bấm nút "ĐĂNG KÝ TÀI KHOẢN" trong form ở Section 8:
+  - Nếu điền đầy đủ thông tin hợp lệ → gửi dữ liệu (bao gồm cả ảnh biên lai upload) về Google Sheet tại địa chỉ: `https://docs.google.com/spreadsheets/d/1VdLuaX1H-mAwIGw1SP27zZnTiJRuYzR6slV9Q9tTxco/edit?usp=sharing`
+  - Nếu thiếu thông tin bắt buộc → báo lỗi tại chỗ, yêu cầu nhập lại, không cho submit.
+
+### Nguyên tắc bố cục hình ảnh theo khu vực
+
+- Tránh dùng ảnh stock chung chung hoặc hình ảnh y tế nặng (kim tiêm, phòng cấp cứu) — định vị thương hiệu là "chăm sóc tại nhà, nhẹ nhàng".
+- Hero: ảnh chân dung giảng viên chuyên nghiệp + mockup giao diện khóa học trên laptop/điện thoại.
+- Section nội dung khóa học: trình bày dạng accordion, có icon video, thể hiện tính hệ thống.
+- Section giảng viên: dùng ảnh thật từ lớp học offline.
+- Bonus: mockup trực quan từng món quà tặng.
+- Bảng giá: khung nổi bật, viền màu vàng `#EAD292`, tách biệt với các khối xung quanh.
+
+### Tách biệt điều hướng Landing page và Learning platform
+
+| Khu vực | Thanh điều hướng |
+|---|---|
+| Landing page (trang này) | Logo \| Khóa học \| Tin tức \| Đăng nhập |
+| Learning platform (không thuộc phạm vi prompt này) | Logo \| Khóa học của tôi \| Tài khoản \| Đăng xuất |
+
+*(Learning platform là hệ thống riêng sau khi học viên đăng nhập — không xây trong prompt này.)*
+
+---
+
+## SECTION 1 — HERO
+
+🟨 **Yêu cầu thiết kế:** Dùng 3 ảnh minh họa "Section 1a", "Section 1b", "Section 1c" (file người dùng cung cấp). Logo đặt góc trên bên trái, "Logo" (file người dùng cung cấp).
+
+🟩 **Nội dung hiển thị (giữ nguyên nội dung đã cung cấp trong mục này, có hình minh họa tinh tế cho mỗi mục, font chữ đẹp, không sai chính tả Việt Nam, làm đẹp nổi bật những tiêu đề chính):**
+
+> CHỈ VỚI 15 PHÚT MỖI NGÀY THÔNG THẠO NHIỀU TUYỆT CHIÊU!
+>
+> Giải Pháp Chăm Sóc Sức Khỏe Tự Nhiên Dành Cho Người Bận Rộn
+>
+> Khóa học như một "chìa khóa" giúp kích hoạt hệ thống tự chữa lành tự nhiên vốn đã được lập trình sẵn trong cơ thể.
+>
+> Khóa học Online **"DIỆN CHẨN KÍCH HOẠT ADN TỰ CHỮA LÀNH".** Đóng gói trọn bộ 25 bài giảng thực chiến giúp bạn khai thông ách tắc tại nhà.
+>
+> **Bullet giá trị (hình tròn có dấu tick ở giữa):**
+> - ✅ Cắt đứt nhanh chóng những triệu chứng khó chịu đeo bám dai dẳng hằng ngày.
+> - ✅ Chuẩn hóa quy trình từng bước, dễ nhớ, dễ làm và thấy ngay kết quả.
+> - ✅ Sở hữu kỹ năng chăm sóc sức khỏe chủ động trọn đời cho bản thân, cha mẹ và con cái.
+> - ƯU ĐÃI CỰC TỐT KHI THAM GIA
+>
+> **CTA Button:** [ ĐĂNG KÝ HỌC NGAY ]
+>
+> **Micro-copy:** *(Học online trọn đời — Hỗ trợ 1:1 qua nhóm cộng đồng — Bộ quà tặng độc quyền)*
+>
+> **Trust Badges:** 🎓 11+ Năm Kinh Nghiệm | 👥 Đào Tạo Trực Tiếp 500+ Học Viên | 🩺 Hỗ Trợ 1000+ Ca Phục Hồi
+
+---
+
+## SECTION 2 — LỘ TRÌNH HỌC
+
+🟨 **Yêu cầu thiết kế:** Trình bày dạng bảng cuộn/accordion thu gọn các chương. **Không tự ý thêm/bớt bất kỳ nội dung nào** trong danh sách bài học bên dưới. Dùng ảnh "Section 2" đặt bên phải nội dung.
+
+🟩 **Nội dung hiển thị (giữ nguyên nội dung đã cung cấp trong mục này, có hình minh họa tinh tế cho mỗi mục, font chữ đẹp, không sai chính tả và dấu trong văn phong Tiếng Việt, làm đẹp nổi bật những tiêu đề chính):**
+
+
+> **LỘ TRÌNH THÀNH CHUYÊN NGHIỆP**
+>
+> **Chương 1: Nền Tảng Nhập Môn (7 bài)**
+> Bài 1: Hành trình khám phá câu chuyện về Thầy Tổ.
+> Bài 2: Diện Chẩn – Điều Khiển Liệu Pháp là gì?
+> Bài 3: Giải mã hệ thống Huyệt đạo – Đồ hình – Dụng cụ Diện Chẩn.
+> Bài 4: Tư thế chuẩn hạn chế khí trượt đảo chiều.
+> Bài 5: Gia tăng hiệu quả khi dùng huyệt Diện Chẩn.
+> Bài 6: Cẩm nang sử dụng dụng cụ.
+> Bài 7: Dùng ngải cứu đúng Thời.
+>
+> **Chương 2: Kích hoạt cơ chế tự chữa lành (4 bài)**
+> Bài 8: Chăm sóc sức khỏe toàn diện
+> Bài 9: Đánh thức "ngân hàng thuốc" tiềm ẩn trong cơ thể.
+> Bài 10: Tăng sức đề kháng và chống viêm bằng thao tác đơn giản.
+> Bài 11: Những nguyên tắc vàng trong Diện Chẩn.
+>
+> **Chương 3: Đọc vị cơ thể, xử lý tình huống (8 bài)**
+> Bài 12: Vọng – Văn – Vấn – Thiết trong Diện Chẩn truy tìm nguồn gốc
+> Bài 13: Kỹ năng phòng bệnh chủ động.
+> Bài 14: Cấp cứu nhanh những tình huống khẩn cấp.
+> Bài 15: Xử lý hiện tượng huyết áp bất thường.
+> Bài 16: Xác định chính xác vị trí huyệt cơ bản.
+> Bài 17: Khai thông huyệt đạo.
+> Bài 18: Nâng tầm kỹ năng khai thông huyệt đạo.
+> Bài 19: Ứng dụng Ngũ hành tương sinh – tương khắc trong Diện Chẩn.
+>
+> **Chương 4: Chinh phục 7 cửa ải thành chuyên gia (7 bài)**
+> Bài 20: Phác đồ Chu Thiên Toàn Diện – Cân bằng năng lượng toàn thân.
+> Bài 21: Phác đồ Đa Năng – Giải pháp đa triệu chứng.
+> Bài 22: Đẩy lùi rối loạn tiền đình bằng Diện Chẩn.
+> Bài 23: Gỡ nút thắt thoái hóa – gai – thoát vị đốt sống cổ.
+> Bài 24: Chấm dứt cơn đau đầu không dùng thuốc.
+> Bài 25: Giải phóng cứng cổ vai gáy nhanh chóng.
+
+---
+
+## SECTION 3 — KẾT QUẢ SAU KHÓA HỌC
+
+🟨 **Yêu cầu thiết kế:** Không tự ý thêm/bớt nội dung. Bố trí đẹp, tinh tế.
+
+🟩 **Nội dung hiển thị (giữ nguyên nội dung đã cung cấp trong mục này, có hình minh họa tinh tế cho mỗi mục, font chữ đẹp, không sai chính tả và dấu trong văn phong Tiếng Việt, làm đẹp nổi bật những tiêu đề chính):**
+
+> **SAU KHÓA HỌC THÌ BẠN SẼ:**
+> - Có khả năng tự nhận biết, đọc hiểu các dấu hiệu bất thường trên mặt và cơ thể để dự phòng bệnh tật, chăm sóc bản thân một cách an toàn và tiết kiệm.
+> - Thành thạo các thao tác khai thông khí huyết và các phác đồ xử lý triệu chứng.
+> - Xây dựng lối sống lành mạnh, chủ động giúp dân văn phòng và freelancer cân bằng lại nhịp sống bận rộn, giảm stress áp lực công việc.
+> - Hiểu rõ mối liên hệ giữa các phản chiếu trên gương mặt với cơ quan nội tạng bên trong cơ thể.
+> - Sở hữu một "kỹ năng sinh tồn" thời đại số, trang bị thêm một năng lực tự chủ về sức khỏe nâng cao hiệu suất làm việc mỗi ngày.
+
+---
+
+## SECTION 4 — AI CẦN KHÓA HỌC NÀY
+
+🟨 **Yêu cầu thiết kế:** Không tự ý thêm/bớt nội dung. Bố trí đẹp, tinh tế.
+
+🟩 **Nội dung hiển thị (giữ nguyên nội dung đã cung cấp trong mục này, có hình minh họa tinh tế cho mỗi mục, font chữ đẹp, không sai chính tả và dấu trong văn phong Tiếng Việt, làm đẹp nổi bật những tiêu đề chính):**
+
+> **MÀ TÓM LẠI... AI SẼ CẦN KHÓA HỌC NÀY!**
+> Muốn giải quyết trọn bộ triệu chứng khó chịu từ nữa thân người trên như: cổ vai gáy, tiền đình, đốt sống cổ, viêm xoang...
+> Tiết kiệm thời gian và không muốn dùng thuốc, muốn chủ động tự chăm sóc bản thân chỉ với 10-15 phút thực hành mỗi ngày.
+> Học một kỹ năng thực chiến không chỉ giúp ích cho bản thân mà còn chủ động hỗ trợ những người thân yêu (ông bà, cha mẹ, bạn bè...).
+> Thỏa mãn đam mê khám phá kiến thức mới mẻ, hiện đại, tự kích hoạt khả năng tự chữa lành tự nhiên, là một "món ăn tinh thần" hoàn toàn mới lạ, khoa học nhưng gần gũi, giúp mở rộng tư duy về chăm sóc sức khỏe toàn diện.
+
+---
+
+## SECTION 5 — BONUS
+
+🟩 **Nội dung hiển thị (giữ nguyên nội dung đã cung cấp trong mục này, có hình minh họa tinh tế cho mỗi mục, font chữ đẹp, không sai chính tả và dấu trong văn phong Tiếng Việt, làm đẹp nổi bật những tiêu đề chính):**
+
+
+
+> **BỘ 5 MÓN QUÀ ĐỘC QUYỀN KHI ĐĂNG KÝ!**
+> - Hỗ trợ 1:1 qua nhóm cộng đồng
+> - Miễn phí tham gia các buổi học online nâng cao
+> - Ebook độc quyền nhiều tuyệt chiêu
+> - Nâng cấp tài khoản 1 năm thành trọn đời
+> - Bộ checklist quy trình chăm sóc sức khỏe
+> - Bản đồ tư duy lộ trình học.
+
+*(Có nút CTA "ĐĂNG KÝ HỌC NGAY" ngay sau section này, theo nguyên tắc lặp lại CTA ở phần Yêu cầu kỹ thuật chung.)*
+
+---
+
+## SECTION 6 — GIẢNG VIÊN
+
+🟨 **Yêu cầu thiết kế:** Dùng 4 ảnh minh họa "Section 6a", "Section 6b", "Section 6c", "Section 6d".
+
+🟩 **Nội dung hiển thị (giữ nguyên nội dung đã cung cấp trong mục này, có hình minh họa tinh tế cho mỗi mục, font chữ đẹp, không sai chính tả và dấu trong văn phong Tiếng Việt, làm đẹp nổi bật những tiêu đề chính):**
+
+> **NGUYỄN MINH ĐẠT LÀ AI?**
+> NGƯỜI THỔI HỒN VÀO HÀNH TRÌNH TỰ CHỮA LÀNH CỦA BẠN
+>
+> "Với tôi, Diện Chẩn không chỉ là một phương pháp chăm sóc sức khỏe, mà là một sự nghiệp tâm huyết và là phong cách sống suốt hơn 11 năm qua.
+> Khóa học Online này được tôi ấp ủ và đóng gói với mục tiêu: Dù bạn ở bất kỳ đâu, bận rộn đến đâu, cũng có thể tiếp cận tinh hoa Diện Chẩn một cách đơn giản, và đây là phương pháp quản trị sức khỏe của người Việt Nam do Thầy Tổ Bùi Quốc Châu phát minh"
+>
+> **Con số bảo chứng:**
+> - 🌟 11 Năm kinh nghiệm liên tục: Lấy Diện Chẩn làm nghề nghiệp chính và nghiên cứu chuyên sâu.
+> - 🌟 500+ Học viên Offline: Hướng dẫn các lớp offline tại VP Diện Chẩn Vì Cộng Đồng – Chi Nhánh Q.1 (Diện Chẩn Boutique).
+> - 🌟 1.000+ Ca phục hồi: Trực tiếp tham vấn và hỗ trợ phục hồi các triệu chứng cấp & mãn tính.
+
+---
+
+## SECTION 7 — BẢNG GIÁ
+
+🟩 **Nội dung hiển thị (giữ nguyên nội dung đã cung cấp trong mục này, có hình minh họa tinh tế cho mỗi mục, font chữ đẹp, không sai chính tả và dấu trong văn phong Tiếng Việt, làm đẹp nổi bật những tiêu đề chính):**
+
+> **BẢNG GIÁ SỞ HỮU KHÓA HỌC TRỌN ĐỜI**
+> KHÔNG CÓ SỔ HỒNG VÀ CŨNG KHÔNG CÓ VIEW BIỂN NHƯNG BẠN VẪN ĐẦU TƯ ĐƯỢC DÀI LÂU CHO SỨC KHỎE VỚI CHI PHÍ CỰC THẤP
+>
+> *Giá đang ưu đãi tri ân học viên hiện đang cực tốt lên tới 50%, chương trình này có thể kết thúc trước thời hạn!*
+>
+> Giá niêm yết: ~~1.750.000 VNĐ~~
+> **Ưu đãi độc quyền hôm nay: 875.000 VNĐ** *(Học trọn đời — Toàn bộ 25 bài học + 5 Quà tặng)*
+
+*(Khung giá dùng viền vàng `#EAD292` nổi bật theo nguyên tắc chung. Có nút CTA "ĐĂNG KÝ HỌC NGAY" ngay sau section này.)*
+
+---
+
+## SECTION 8 — THANH TOÁN & ĐĂNG KÝ TÀI KHOẢN
+
+🟨 **Yêu cầu thiết kế:** Đây là khu vực quan trọng nhất để thanh toán và chốt sale — thiết kế đẹp, chuẩn chỉnh. Khung form nổi bật viền vàng `#EAD292`, nút bấm `#CF5C78` dạng gradient, kèm biểu tượng ổ khóa bảo mật SSL cạnh nút submit để tăng cảm giác an toàn. Dùng ảnh "QR code thanh toán" do người dùng cung cấp.
+
+🟩 **Nội dung hiển thị (giữ nguyên nội dung đã cung cấp trong mục này, có hình minh họa tinh tế cho mỗi mục, font chữ đẹp, không sai chính tả và dấu trong văn phong Tiếng Việt, làm đẹp nổi bật những tiêu đề chính):**
+
+> **CHỈ VÀI BƯỚC ĐƠN GIẢN LÀ CHÚNG TA CÙNG ĐỒNG HÀNH TRỌN ĐỜI**
+>
+> Bước 1: Thanh toán theo mã QR code, nội dung chuyển khoản ghi: Họ tên + SDT + ADN
+>
+> Bước 2: Nhập thông tin vào form Đăng ký tài khoản bên dưới và chờ kích hoạt... thế là xong!
+>
+> **Form đăng ký (các trường bắt buộc):**
+> 1. 👤 Họ và tên của bạn: [Nhập họ và tên...]
+> 2. 📞 Số điện thoại (Zalo): [Nhập số điện thoại...]
+> 3. ✉️ Email nhận tài khoản học: [Nhập email chính xác...]
+> 4. 🔒 Mật khẩu (tự đặt)
+> 5. 🔒 Nhập lại mật khẩu
+> 6. 📎 Ảnh biên lai chuyển khoản
+> 7. ☑ Tôi đồng ý với Điều khoản sử dụng & Chính sách bảo mật
+>
+> **Button:** [ ĐĂNG KÝ TÀI KHOẢN ]
+
+🟨 **Logic form (kỹ thuật, không hiển thị):**
+- Trường 6 (ảnh biên lai) là **bắt buộc** — không cho submit nếu chưa đính kèm ảnh.
+- Mật khẩu (trường 4, 5) phải khớp nhau mới cho submit.
+- Trường 7 (checkbox đồng ý điều khoản) bắt buộc phải tick mới cho submit.
+- Submit hợp lệ → gửi toàn bộ dữ liệu + ảnh biên lai về Google Sheet đã nêu ở phần Yêu cầu kỹ thuật chung; tài khoản học viên được tạo ở trạng thái "Chờ kích hoạt".
+- Submit thiếu/sai thông tin → báo lỗi ngay tại trường tương ứng, không cho gửi đi.
+
+---
+
+## SECTION 9 — CÂU HỎI THƯỜNG GẶP (FAQ)
+
+🟨 **Yêu cầu thiết kế:** Trình bày dạng thẻ bo tròn tinh tế, icon dấu hỏi màu vàng cát `#EAD292`, dạng accordion mở/đóng từng câu.
+
+🟩 **Nội dung hiển thị (giữ nguyên nội dung đã cung cấp trong mục này, có hình minh họa tinh tế cho mỗi mục, font chữ đẹp, không sai chính tả và dấu trong văn phong Tiếng Việt, làm đẹp nổi bật những tiêu đề chính):**
+
+> **CÂU HỎI THƯỜNG GẶP**
+>
+> ❓ 1. Tôi chưa từng học y học cổ truyền hay bấm huyệt bao giờ thì có học được không?
+> 👉 Hoàn toàn được! Khóa học được thiết kế từ số 0, dùng ngôn ngữ hiện đại, đồ hình trực quan và hướng dẫn từng động tác rất chi tiết, ai cũng có thể làm theo dễ dàng.
+>
+> ❓ 2. Tôi học online như thế nào và thời hạn xem video là bao lâu?
+> 👉 Sau khi thanh toán và được admin kích hoạt, bạn đăng nhập vào website để học trên nền tảng video chuyên biệt. Bạn được tặng ngay gói sở hữu và xem lại trọn đời mọi lúc, mọi nơi trên điện thoại hay máy tính.
+>
+> ❓ 3. Khi thực hành nếu không tìm đúng huyệt hoặc có thắc mắc thì ai hỗ trợ?
+> 👉 Bạn sẽ được tham gia nhóm hỗ trợ độc quyền và các buổi Zoom trực tiếp cùng Nguyễn Minh Đạt để được giải đáp và hướng dẫn tỉ mỉ.
+>
+> ❓ 4. Có bắt buộc phải có dụng cụ đầy đủ không?
+> 👉 Bạn hoàn toàn có thể dùng các vật dụng sẵn có như đầu ngón tay, chìa khóa... để làm ngay.
+
+---
+
+## SECTION 10 — FOOTER
+
+🟨 **Yêu cầu thiết kế:** Dùng ảnh minh họa "Footer (file người dùng cung cấp, logo đặt bên trái).
+
+🟩 **Nội dung hiển thị (giữ nguyên nội dung đã cung cấp trong mục này, có hình minh họa tinh tế cho mỗi mục, font chữ đẹp, không sai chính tả và dấu trong văn phong Tiếng Việt, làm đẹp nổi bật những tiêu đề chính):**
+
+> **Thông Tin Bản Quyền**
+> Khóa Học: Diện Chẩn Kích Hoạt ADN Tự Chữa Lành
+> Slogan: Kích hoạt khả năng tự chữa lành tự nhiên – Làm chủ sức khỏe từ gốc.
+>
+> **Thông tin liên hệ & Hỗ trợ:**
+> 📍 Hotline/Zalo: 091.999.4282
+> ✉️ Email hỗ trợ: dienchanboutique@gmail.com
+> 🌐 Website: www.nguyenminhdat.com
+>
+> Copyright: © 2026 Bản quyền thuộc về Nguyễn Minh Đạt. All rights reserved.
+
+---
+
+## PHẦN BACKEND & ADMIN PANEL (bắt buộc để trang hoạt động thật, không chỉ là giao diện tĩnh)
+
+🟨 **Ghi chú:** Phần này không có nội dung hiển thị cố định — đây là toàn bộ yêu cầu chức năng để hệ thống thực sự vận hành được (tạo tài khoản, kích hoạt, đăng nhập, quản trị). Xây dựng song song với giao diện landing page ở trên trong cùng một dự án.
+
+### 1. Xác thực & tài khoản học viên
+- Khi học viên submit form ở Section 8 hợp lệ (đủ thông tin + ảnh biên lai + mật khẩu khớp + đã tick đồng ý điều khoản): tạo tài khoản mới trong hệ thống auth (email + mật khẩu do học viên tự đặt), trạng thái ban đầu là **"Chờ kích hoạt"** — chưa được vào xem khóa học.
+- Đồng thời gửi dữ liệu đăng ký (họ tên, SĐT, email, ảnh biên lai) về Google Sheet: `https://docs.google.com/spreadsheets/d/1VdLuaX1H-mAwIGw1SP27zZnTiJRuYzR6slV9Q9tTxco/edit?usp=sharing`
+- Trang đăng nhập riêng cho học viên (email + mật khẩu). Nếu tài khoản đang "Chờ kích hoạt", đăng nhập được nhưng hiển thị màn hình thông báo "Tài khoản đang chờ xác nhận thanh toán", chưa cho xem video. Có thanh menu phía trên quay lại trang chủ.
+- Chức năng "Quên mật khẩu": gửi link đặt lại mật khẩu qua email — không được tự sinh và gửi mật khẩu dạng chữ thô qua bất kỳ kênh nào.
+
+### 2. Trang Admin Panel (yêu cầu đăng nhập riêng, không public)
+
+**a) Quản lý học viên**
+- Danh sách: họ tên, SĐT, email, ngày đăng ký, trạng thái thanh toán, trạng thái tài khoản (Chờ kích hoạt / Active / Inactive), ngày hết hạn truy cập (nếu có).
+- Không hiển thị mật khẩu dạng chữ thô ở bất kỳ đâu trong panel.
+- Admin có thể tự tạo tài khoản + đặt mật khẩu thay cho học viên (trường hợp học viên nhờ hỗ trợ trực tiếp).
+
+**b) Quản lý khóa học & nội dung**
+- CRUD khóa học → chương → bài → video, sắp xếp thứ tự hiển thị.
+- Ẩn/hiện tạm thời một bài học khi cần chỉnh sửa.
+
+**c) Quản lý đơn hàng & thanh toán (ưu tiên hoàn chỉnh trước)**
+- Danh sách đơn theo trạng thái: chưa thanh toán / chờ xác nhận / đã thanh toán.
+- Admin panel đọc và hiển thị trực tiếp dữ liệu từ Google Sheet nói trên — không bắt admin mở Sheet thủ công song song.
+- Xem ảnh biên lai chuyển khoản ngay trong từng đơn.
+- Nút Duyệt / Từ chối kích hoạt ngay trên panel:
+  - **Duyệt** → chuyển trạng thái tài khoản từ "Chờ kích hoạt" sang "Active" (không tạo hay gửi mật khẩu mới — học viên dùng mật khẩu đã tự đặt).
+  - **Từ chối** → giữ nguyên trạng thái, có ô ghi lý do.
+
+**d) Quản lý tài khoản người dùng**
+- Bật/tắt Active ⇄ Inactive.
+- Khóa tài khoản khi cần.
+- Reset password = gửi link tự đặt lại mật khẩu cho học viên (không phải admin tự gõ mật khẩu mới).
+
+**e) Quản lý nội dung landing page (CMS nhẹ)**
+- Cho phép sửa trực tiếp: nội dung Hero, FAQ, Bonus, Giá, text nút CTA — không cần deploy lại code mỗi khi đổi nội dung bán hàng.
+
+**f) Thống kê & báo cáo**
+- Số lượng đăng ký theo ngày/tuần/tháng.
+- Doanh thu theo thời gian.
+- Tỷ lệ đơn đã kích hoạt so với đang chờ xử lý.
+
+**g) Thông báo tự động (ưu tiên hoàn chỉnh trước)**
+- Gửi email/thông báo tự động theo các mốc: đăng ký thành công (đang chờ xác nhận), tài khoản đã được kích hoạt.
+- Nội dung thông báo "đã kích hoạt" chỉ nhắc đăng nhập bằng email + mật khẩu đã tự tạo lúc đăng ký — **tuyệt đối không đính kèm mật khẩu** trong nội dung gửi đi.
+
+**h) Phân quyền & bảo mật admin**
+- Giới hạn vai trò truy cập panel (ví dụ: nhân viên hỗ trợ chỉ xem/duyệt đơn hàng, không được sửa giá hay nội dung landing).
+- Lưu log các thao tác nhạy cảm: duyệt/từ chối kích hoạt tài khoản, thay đổi giá.
+- Giới hạn ai được cấp quyền truy cập Google Sheet chứa thông tin khách hàng (SĐT, email) — không chia sẻ link Sheet ra ngoài phạm vi cần thiết, tránh rò rỉ dữ liệu cá nhân.
+
+### 3. Thứ tự ưu tiên khi build
+1. Auth cơ bản (đăng ký, đăng nhập, quên mật khẩu) + tạo đơn hàng khi submit Section 8.
+2. Admin Panel — mục (c) Quản lý đơn hàng & thanh toán và mục (g) Thông báo tự động (đây là 2 phần cốt lõi để vận hành hằng ngày).
+3. Các mục còn lại của Admin Panel (a, b, d, e, f, h) có thể hoàn thiện sau.

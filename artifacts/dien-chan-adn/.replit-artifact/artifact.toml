@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Diện Chẩn Kích Hoạt ADN"
+description = "Landing page bán khóa học online Diện Chẩn Kích Hoạt ADN Tự Chữa Lành, dành cho người bận rộn muốn chủ động chăm sóc sức khỏe tại nhà."
+version = "1.0.0"
+id = "artifacts/dien-chan-adn"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 20560
+
+[services.development]
+run = "pnpm --filter @workspace/dien-chan-adn run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/dien-chan-adn", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/dien-chan-adn/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "20560"
+BASE_PATH = "/"

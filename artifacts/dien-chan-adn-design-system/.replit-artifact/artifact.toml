@@ -1,0 +1,19 @@
+kind = "design-system"
+previewPath = "/dien-chan-adn-design-system/"
+title = "Diện Chẩn Kích Hoạt ADN Design System"
+description = "A reusable visual language for the Diện Chẩn Kích Hoạt ADN course experience, covering its navy, champagne, cream, and rose palette, editorial typography, responsive layouts, and conversion-focused interface patterns."
+version = "1.0.0"
+id = "artifacts/dien-chan-adn-design-system"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/dien-chan-adn-design-system/" ]
+localPort = 22792
+
+[services.development]
+run = "pnpm --filter @workspace/dien-chan-adn-design-system run dev"
+
+[services.env]
+PORT = "22792"
+BASE_PATH = "/dien-chan-adn-design-system/"

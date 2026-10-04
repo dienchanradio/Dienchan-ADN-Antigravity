@@ -1,0 +1,30 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "uzB6WiVVm42qvOoz6xKSN"
+uri = "file://artifacts/dien-chan-adn/public/assets/Section_2_character_no_bg.png"
+type = "image"
+title = "Ảnh nhân vật đã tách nền"
+description = "Ảnh Hình thay thế đã được đặt vào asset Section 2 với nền trong suốt."
+logical_id = "e90401d3-1cc7-4923-950a-937dae0fd7ba"
+content_hash = "sha256:2eb35d55888afb5e874dcf48fc2d624cb894b0eb621c495c326238dd244ab403"
+size = 682031
+mtime_ms = 1788701538270
+storage_uri = "gcs://replit-rams-assets-pike/rams/assets/repl:a21bb7e8-8a53-4966-b7d9-70df53f44283/e90401d3-1cc7-4923-950a-937dae0fd7ba/2aa75f65-8621-4986-9725-6ecea3cf43c5"
+storage_version_token = "1788701632450714"
+content_type = "image/png"
+
+[[outputs]]
+id = "_M3z9ZrEY9W5qxmbGaYGF"
+uri = "file://attached_assets/image_1788709231324_no_underline.png"
+type = "image"
+title = "Ảnh đã xóa đường line"
+description = "Giữ nguyên chữ NGUYỄN MINH ĐẠT và màu sắc; chỉ xóa đường line viền dưới chữ."
+logical_id = "be4f49ab-3163-4b96-8130-7fa8d09c2b99"
+content_hash = "sha256:2027c6cac5e9848483b17d969877b95f6d93a20cc048cc3ce09d6349b0dfaa6a"
+size = 58091
+mtime_ms = 1788709481780
+storage_uri = "gcs://replit-rams-assets-pike/rams/assets/repl:a21bb7e8-8a53-4966-b7d9-70df53f44283/be4f49ab-3163-4b96-8130-7fa8d09c2b99/45dfdab0-932b-400c-8c64-f970e071ff60"
+storage_version_token = "1788709497804347"
+content_type = "image/png"
