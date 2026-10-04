@@ -1,0 +1,9 @@
+node_modules
+.git
+.cache
+.local
+*.zip
+*.tar.gz
+dist
+out-tsc
+tmp
