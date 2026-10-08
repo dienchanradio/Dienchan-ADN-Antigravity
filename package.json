@@ -2,7 +2,7 @@
   "name": "workspace",
   "version": "0.0.0",
   "license": "MIT",
-  "packageManager": "pnpm@10.26.1",
+  "packageManager": "pnpm@9.4.0",
   "scripts": {
     "start": "cd lib/db && npm run push && cd ../.. && node --enable-source-maps artifacts/api-server/dist/index.mjs",
     "build": "pnpm run typecheck && pnpm -r --if-present run build",
